@@ -10,8 +10,10 @@ if (localStorage.getItem("bookmarks") !== null) {
 // adding the values to the empty array
 function addBookmark() {
   if (
-    websiteNameInput.classList.contains("is-invalid") ||
-    websiteUrlInput.classList.contains("is-invalid")
+    websiteUrlInput.value.trim() === "" || 
+    websiteNameInput.value.trim() === "" ||
+    websiteUrlInput.classList.contains("is-invalid") ||
+    websiteNameInput.classList.contains("is-invalid") 
   ) {
     alertBoxCheck();
     return;
@@ -110,6 +112,8 @@ var close = document.getElementById("close");
 
 function alertBoxCheck() {
   if (
+    websiteUrlInput.value.trim() === "" || 
+    websiteNameInput.value.trim() === "" ||
     websiteUrlInput.classList.contains("is-invalid") ||
     websiteNameInput.classList.contains("is-invalid")
   ) {
